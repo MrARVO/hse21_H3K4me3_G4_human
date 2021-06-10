@@ -46,3 +46,12 @@ liftOver H3K4me3_H1.ENCFF883IEF.hg38.bed hg38ToHg19.over.chain.gz   H3K4me3_H1.E
 ![len_hist.H3K4me3_H1.ENCFF041HYH.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF041HYH.hg19.filtered-1.png)
 
 ![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF883IEF.hg19.filtered-1.png)
+
+Затем, с помощью [скрипта](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/src/pie.r),
+в котором используется библиотека ChIPseeker, проанализируем, где располагаются пики 
+гистоновой метки относительно аннотированных генов. 
+Получившиеся пай-чарт графики:
+
+![len_hist.H3K4me3_H1.ENCFF041HYH.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF041HYH.hg19.filtered.plotAnnoPie.png)
+
+![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF883IEF.hg19.filtered.plotAnnoPie.png)
