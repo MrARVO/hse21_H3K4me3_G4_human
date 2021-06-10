@@ -19,8 +19,6 @@ colnames(bed_df) <- c('chrom', 'start', 'end', 'name', 'score')
 bed_df$len <- bed_df$end - bed_df$start
 head(bed_df)
 
-# hist(bed_df$len)
-
 ggplot(bed_df) +
   aes(x = len) +
   geom_histogram() +
