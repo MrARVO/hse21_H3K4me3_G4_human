@@ -84,6 +84,6 @@ cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merged.bed
 Используя те же скрипты, что и в файлах с гистоновыми метками, строим распределение длин участков вторичной структуры, считаем количества пиков и
 смотрим, где располагаются участки структуры ДНК относительно аннотированных генов.
 
-![len_hist.G4.merged](https://github.com/SerebrennikovAlexandr/hse21_H3K4me3_G4_human/blob/main/images/len_hist.GSM3003539.merged.png)
+![len_hist.G4.merged](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.G4_seq_Li_K.merge-1.png)
 
 ![chip_seeker.G4.merged.plotAnnoPie](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/chip_seeker.G4.merge.plotAnnoPie.png)
