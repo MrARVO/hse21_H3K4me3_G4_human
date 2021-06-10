@@ -35,7 +35,7 @@ liftOver H3K4me3_H1.ENCFF883IEF.hg38.bed hg38ToHg19.over.chain.gz   H3K4me3_H1.E
 
 ![len_hist.H3K4me3_H1.ENCFF041HYH.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF041HYH.hg19-1.png)
 
-![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF883IEF.hg19_1.png)
+![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF883IEF.hg19-1.png)
 
 Теперь, из двух файлов с ChIP-seq пиками выкидываем слишком длинные. 
 С помощью [скрипта](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/src/hist2.r)
