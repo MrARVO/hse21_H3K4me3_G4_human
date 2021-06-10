@@ -52,6 +52,13 @@ liftOver H3K4me3_H1.ENCFF883IEF.hg38.bed hg38ToHg19.over.chain.gz   H3K4me3_H1.E
 гистоновой метки относительно аннотированных генов. 
 Получившиеся пай-чарт графики:
 
-![len_hist.H3K4me3_H1.ENCFF041HYH.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF041HYH.hg19.filtered.plotAnnoPie.png)
+![len_hist.H3K4me3_H1.ENCFF041HYH.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/chip_seeker.H3K4me3_H1.ENCFF041HYH.hg19.filtered.plotAnnoPie.png)
 
-![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.ENCFF883IEF.hg19.filtered.plotAnnoPie.png)
+![len_hist.H3K4me3_H1.ENCFF883IEF.hg19](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/chip_seeker.H3K4me3_H1.ENCFF883IEF.hg19.filtered.plotAnnoPie.png)
+
+После этого я соединил два отфильтрованных файла командой bedtools merge, но предварительно отсортировал их
+(bedtools merge принимает на вход отсортированный файл).
+
+```bash
+cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K4me3_H1.merge.hg19.bed 
+```
