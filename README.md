@@ -78,7 +78,7 @@ wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM300
 wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz
 zcat GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz | cut -f1-5 > G4.plus.bed
 zcat GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz | cut -f1-5 > G4.minus.bed
-cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merged.bed 
+cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merge.bed 
 ```
 
 Используя те же скрипты, что и в файлах с гистоновыми метками, строим распределение длин участков вторичной структуры, считаем количества пиков и
@@ -87,3 +87,22 @@ cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merged.bed
 ![len_hist.G4.merged](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.G4_seq_Li_K.merge-1.png)
 
 ![chip_seeker.G4.merged.plotAnnoPie](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/chip_seeker.G4.merge.plotAnnoPie.png)
+
+#### Анализ пересечений гистоновой метки и структуры ДНК
+
+Теперь с помощью bedtools intersect найдем пересечения между гистоновой меткой и структурами ДНК.
+
+```bash
+  bedtools intersect -a G4.merge.bed -b H3K4me3_H1.merge.hg19.bed > H3K4me3_H1.intersect_with_G4.bed
+```
+
+Посмотрим на эти пересечения подробнее:
+![len_hist.intersect_with_G4](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.intersect_with_G4-1.png)
+
+Затем визуализируем все в геномном браузере. Нам интересны места, где есть 
+пересечение между гистоновой меткой и стр-рой ДНК (желательно рядом с аннотированным геном):
+
+![merge_screen_2](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/merge_screen_2.PNG)
+
+Ссылка на [сессию](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/my_session.gz) в геномном браузере.
+ 
