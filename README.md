@@ -100,9 +100,18 @@ cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merge.bed
 ![len_hist.intersect_with_G4](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/images/len_hist.H3K4me3_H1.intersect_with_G4-1.png)
 
 Затем визуализируем все в геномном браузере. Нам интересны места, где есть 
-пересечение между гистоновой меткой и стр-рой ДНК (желательно рядом с аннотированным геном):
+пересечение между гистоновой меткой и структурой ДНК (желательно рядом с аннотированным геном):
 
 ![merge_screen_2](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/merge_screen_2.PNG)
 
 Ссылка на [сессию](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/my_session.gz) в геномном браузере.
  
+Чтобы найти все интересующие нас места, воспользуемся последним [скриптом](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/src/peakAnno.r).
+В результате его работы получаем 2 файла. 
+Первый - [файл ассоциаций пиков с генами](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/data/H3K4me3_H1.intersect_with_G4.genes.txt), 
+а второй - [список уникальных генов](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/data/H3K4me3_H1.intersect_with_G4.genes_uniq.txt). 
+
+GO-анализ для полученных уникальных генов:
+![GO_1](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/GO_1.png)
+
+![GO_2](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/GO_2.png)
