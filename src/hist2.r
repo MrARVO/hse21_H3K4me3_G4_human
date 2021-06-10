@@ -7,11 +7,11 @@ library(dplyr)
 
 #NAME <- 'H3K4me3_H1.ENCFF041HYH.hg19'
 NAME <- 'H3K4me3_H1.ENCFF883IEF.hg19'
-OUT_DIR <- 'images/'
+OUT_DIR <- '../images/'
 
 ###
 
-bed_df <- read.delim(paste0('', NAME, '.bed'), as.is = TRUE, header = FALSE)
+bed_df <- read.delim(paste0('../data/', NAME, '.bed'), as.is = TRUE, header = FALSE)
 colnames(bed_df) <- c('chrom', 'start', 'end', 'name', 'score')
 bed_df$len <- bed_df$end - bed_df$start
 head(bed_df)
