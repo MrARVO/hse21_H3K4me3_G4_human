@@ -62,3 +62,21 @@ liftOver H3K4me3_H1.ENCFF883IEF.hg38.bed hg38ToHg19.over.chain.gz   H3K4me3_H1.E
 ```bash
 cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K4me3_H1.merge.hg19.bed 
 ```
+
+Визуализируем исходные два набора ChIP-seq пиков и их объединение в геномном браузере.
+
+![merge_screen](https://github.com/MrARVO/hse21_H3K4me3_G4_human/blob/main/screens/merge_screen.PNG)
+
+Объединенный файл действительно является резльтатом объединения пиков из двух файлов.
+
+#### Анализ участков вторичной структуры ДНК
+
+Теперь необходимо получить и проанализировать данные вторичной структуры ДНК. Я выбрал G4_seq_Li_K, поэтому скачиваем два bed-файла со вторичной структурой ДНК. Далее, как и в файлах с гистоновыми метками, оставляем первые 5 столбцов и объединяем оба файла.
+
+```bash
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz
+wget https://ftp.ncbi.nlm.nih.gov/geo/samples/GSM3003nnn/GSM3003539/suppl/GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz
+zcat GSM3003539_Homo_all_w15_th-1_plus.hits.max.K.w50.25.bed.gz | cut -f1-5 > G4.plus.bed
+zcat GSM3003539_Homo_all_w15_th-1_minus.hits.max.K.w50.25.bed.gz | cut -f1-5 > G4.minus.bed
+cat GSM3003539_*.bed | sort -k1,1 -k2,2n | bedtools merge > G4.merged.bed 
+```
