@@ -1,10 +1,6 @@
 # hse21_H3K4me3_G4_human
 
-## Майнор "Биоинформатика"
-
 ### Войтецкий Артем
-
-### Группа 1
 
 Исходные файлы: human (hg19), DNA structure - 
 [G4_seq_Li_K](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM3003539), 
